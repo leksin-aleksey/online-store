@@ -19,6 +19,9 @@ public class Category {
     @EqualsAndHashCode.Include
     private String name;
 
+    @Column(length = 512)
+    private String description;
+
     @ManyToMany(mappedBy = "categories")
     private List<Product> products;
 }

@@ -15,9 +15,12 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 256, nullable = false, unique = false)
+    @Column(length = 256, nullable = false)
     @EqualsAndHashCode.Include
     private String name;
+
+    @Column(nullable = false)
+    private String company;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "products_categories",

@@ -1,17 +1,17 @@
-INSERT INTO `products` (`name`)
-    VALUE   ('pasta plate'),
-        ('steak plate'),
-        ('knife'),
-        ('spoon'),
-        ('fork'),
-        ('amd 10'),
-        ('amd 20'),
-        ('intel 13'),
-        ('ferrari enzo');
+INSERT INTO `products` (`name`, `company`)
+    VALUE   ('pasta plate', 'china'),
+        ('steak plate', 'china'),
+        ('knife', 'china'),
+        ('spoon', 'china'),
+        ('fork', 'china'),
+        ('amd 10', 'amd'),
+        ('amd 20', 'amd'),
+        ('intel 13', 'intel'),
+        ('ferrari enzo', 'ferrari');
 GO
 
-INSERT INTO `categories` (`name`)
-VALUE ('Kitchenware'), ('CPU'), ('Cars');
+INSERT INTO `categories` (`name`, `description`)
+VALUE ('Kitchenware', 'All for kitchen'), ('CPU', 'All for computers'), ('Cars', 'All for cars');
 GO
 
 INSERT INTO `products_categories`(`product_id`, `category_id`)
