@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: head"></head>
+<body class="bg-light">
+
+<nav th:replace="fragments/header :: nav"></nav>
+
+<div class="d-flex">
+    <nav th:replace="fragments/sidebar :: sidebar"></nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+
+                    <div class="table-responsive">
+                        <table class="table v-middle">
+                            <tbody>
+                            <tr>
+                                <td>Id</td>
+                                <td th:text="${category.id}">1</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+<!--                                <td th:text="${category.name}">Cars</td>-->
+                                <td>
+                                    <input type="text" class="form-control" id="" placeholder="Regular Input" required="" th:value="${category.name}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td th:text="${category.description}">All about cars</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootadmin.min.js"></script>
+
+</body>
+</html>

@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>4.3.1</version>
+<!--            <version>4.3.1</version>-->
         </dependency>
 
         <dependency>
@@ -73,6 +73,7 @@
                 <configuration>
                     <propertyFile>target/classes/liquibase-maven-plugin.properties</propertyFile>
                     <systemProperties>
+                        <user.name>aleks_ush</user.name>
                         <user.name>aleksey_leksin</user.name>
                     </systemProperties>
                 </configuration>

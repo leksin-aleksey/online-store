@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: head"></head>
+<body class="bg-light">
+
+<nav th:replace="fragments/header :: nav"></nav>
+
+<div class="d-flex">
+    <nav th:replace="fragments/sidebar :: sidebar"></nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+
+    <div class="table-responsive">
+        <table class="table v-middle">
+            <thead>
+            <tr class="bg-light">
+                <th class="border-top-0">Id</th>
+                <th class="border-top-0">Name</th>
+                <th class="border-top-0">Company</th>
+                <th class="border-top-0"></th>
+                <th class="border-top-0"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product: ${products}">
+                <td th:text="${product.id}">1</td>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <div class="">
+                            <h4 class="m-b-0 font-16" th:text="${product.name}">Elite Admin</h4>
+                        </div>
+                    </div>
+                </td>
+                <td th:text="${product.company}">1</td>
+                <td>
+                    <a th:href="@{/product/{id}/edit(id=${product.id})}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="Update">
+                        <i class="fa fa-fw fa-edit"></i>
+                    </a>
+                </td>
+                <td>
+                    <form th:action="@{/product/{id}/delete(id=${product.id})}" th:method="delete" class="d-inline">
+                        <button class="btn btn-icon btn-pill btn-danger" data-toggle="tooltip" title="Delete">
+                            <i class="fa fa-fw fa-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/admin/js/jquery.min.js"></script>
+<script src="/admin/js/bootstrap.bundle.min.js"></script>
+<script src="/admin/js/bootadmin.min.js"></script>
+
+</body>
+</html>
